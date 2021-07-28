@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+}
+.container{
+    min-height: 100vh;
+    display: grid;
+    place-content: space-between;
+    align-items:center;
+    grid-template-areas: 
+    'nav'
+    'header'
+    'main'
+    'footer'
+    ;
+
+}
+.common{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    flex-wrap: wrap;
+    justify-content: space-between !important;
+}
+footer{
+    flex-direction: column;
+}
