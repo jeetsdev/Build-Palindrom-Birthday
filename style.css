@@ -39,9 +39,11 @@ a {
     text-decoration: none;
     font-size: 1.2rem;
 }
-a:hover{
+
+a:hover {
     color: black;
 }
+
 nav a {
     border-left: 2px solid black;
     cursor: pointer;
@@ -70,7 +72,8 @@ main .left {
 .para {
     margin: 20px;
 }
-.para span{
+
+.para span {
     margin-top: 10px;
     display: block;
     font-style: italic;
@@ -93,7 +96,8 @@ main .right {
     margin: 1rem 0;
     padding: .7rem 1rem;
 }
-.right-form .right-comp{
+
+.right-form .right-comp {
     background-color: inherit;
     border: 2px solid black;
     padding: .7rem 1rem;
@@ -105,10 +109,12 @@ main .right {
     margin-top: 1rem;
     width: inherit;
 }
-.output{
-    margin:1rem 0;
+
+.output {
+    margin: 1rem 0;
     visibility: hidden;
 }
+
 .output p {
     padding: 1.5rem;
     border: 3px solid black;
@@ -119,13 +125,45 @@ footer {
     border-top: 2px solid black;
     flex-direction: column;
 }
-footer ul{
+
+footer ul {
     list-style: none;
     padding: 0%;
 }
-.social-li{
-    margin:10px 1rem 0 1rem;
+
+.social-li {
+    margin: 10px 1rem 0 1rem;
 }
-footer p{
+
+footer p {
     margin: 5px 0 10px 0;
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        flex-direction: column;
+        font-size: 1rem;
+    }
+
+    main .left {
+        text-align: center;
+        width: 90vw;
+        border: transparent;
+        margin: 0;
+    }
+
+    main .right {
+        width: 90vw;
+    }
+
+    .para {
+        margin: 20px 0;
+    }
+
+    a {
+        font-size: 1rem;
+    }
+    .output{
+        margin: 2rem 0;
+    }
 }
