@@ -1,10 +1,11 @@
 * {
     margin: 0%;
     box-sizing: border-box;
+    transition: all .3s linear;
 }
 
 body {
-    background-color: rgb(179, 171, 171);
+    background-color: rgb(235, 223, 223);
 }
 
 .common {
@@ -29,25 +30,29 @@ body {
 }
 
 nav {
+    border-bottom: 2px solid black;
     justify-content: flex-end !important;
 }
 
 a {
+    color: blue;
     text-decoration: none;
     font-size: 1.2rem;
 }
-
+a:hover{
+    color: black;
+}
 nav a {
+    border-left: 2px solid black;
     cursor: pointer;
-    border: 2px solid black;
-    margin: .5rem 1rem;
-    padding: .5rem;
+    margin: 0 1rem;
+    padding: 1rem;
     float: right;
 }
 
 main {
+    margin-top: 1rem;
     font-size: 1.3rem;
-    text-align: left;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,6 +70,11 @@ main .left {
 .para {
     margin: 20px;
 }
+.para span{
+    margin-top: 10px;
+    display: block;
+    font-style: italic;
+}
 
 main .right {
     width: 30vw;
@@ -79,32 +89,43 @@ main .right {
 }
 
 .right-form label {
+    text-align: center;
     margin: 1rem 0;
     padding: .7rem 1rem;
 }
-
-.right-form input {
-    padding: .7rem 1rem;
+.right-form .right-comp{
     background-color: inherit;
     border: 2px solid black;
+    padding: .7rem 1rem;
 }
 
 .right-form button {
+    cursor: pointer;
     margin: auto;
     margin-top: 1rem;
-    background-color: inherit;
-    border: 2px solid black;
-    padding: 0.5rem 1rem;
     width: inherit;
 }
-
+.output{
+    margin:1rem 0;
+    visibility: hidden;
+}
 .output p {
     padding: 1.5rem;
     border: 3px solid black;
-    /* border-radius: 10%; */
     width: 65vw;
 }
 
 footer {
+    border-top: 2px solid black;
     flex-direction: column;
+}
+footer ul{
+    list-style: none;
+    padding: 0%;
+}
+.social-li{
+    margin:10px 1rem 0 1rem;
+}
+footer p{
+    margin: 5px 0 10px 0;
 }
