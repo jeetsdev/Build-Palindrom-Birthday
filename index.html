@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/1ad4d3ae1e.js" crossorigin="anonymous" defre></script>
+    <script src="https://kit.fontawesome.com/1ad4d3ae1e.js" crossorigin="anonymous" async></script>
     <title>Palindrome Birth-Date</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
@@ -14,19 +14,32 @@
         <nav class="common">
             <a href="">Github Repo</a>
         </nav>
-        <header class="common">
-            <h1>Check your birth-date is a palindrome number or not.</h1>
-        </header>
+            <main>
+                <div class="left">
+                    <h1>Check out if your Birthdate is Palidrome.</h1>
+                    <p class="para">A palindrome is a word/number which reads the same backward as forward.
+                        <span style="display: block;">Example - 2012/12/02</span>
+                    </p>
+                    <p class="para">This app checks your birthdate in 4 formats <strong>yyyy-mm-dd, dd-mm-yyyy, mm-dd-yy, m-dd-yyyy</strong>. 
+                    <span style="display: block;">Example - if your birthdate is 01 Aug 1995, then app will check for
+                        19950801, 01081995, 080195,1081995.</span>
+                    </p>
 
-        <main class="common">
-            <div class="image">
-                <p>Image here</p>
-            </div>
-            <div class="game">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. lorem2000
-                </p>
-            </div>
-        </main>
+                </div>
+                <div class="right">
+                    <form action="" method="get" class="right-form" onsubmit="return false">
+                        <label for="user-dob">
+                            <h3>Enter your DOB</h3>
+                        </label>
+                        <input type="date" name="user-dob" id="user-dob" required>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </main>
+        <div class="output common">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, voluptatibus? Debitis accusantium sunt dolore numquam fugit aperiam? Minima, deserunt repellat!</p>
+        </div>
+
         <footer class="social common">
             <ul class="common">
                 <li class="social-li">
