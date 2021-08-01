@@ -116,12 +116,14 @@ main .right {
 .loading-img{
     display: none;
     margin: auto;
+    height: 20vh;
 }
 .output {
+    width: 80vw;
     text-align: center;
     font-size: larger;
     font-weight: 800;
-    margin: 2rem;
+    margin: 2rem auto;
     display: none;
     border:  3px solid black;
     padding: 1.5rem;
@@ -170,7 +172,7 @@ footer p {
     a {
         font-size: 1rem;
     }
-    .output{
-        margin: 2rem 1rem;
-    }
+    /* .output{
+        margin: 2rem auto;
+    } */
 }
