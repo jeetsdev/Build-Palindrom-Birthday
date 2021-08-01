@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/1ad4d3ae1e.js" crossorigin="anonymous" async></script>
+    <!-- <script src="https://kit.fontawesome.com/1ad4d3ae1e.js" crossorigin="anonymous" defer></script> -->
     <title>Palindrome Birth-Date</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -31,15 +31,14 @@
                         <label for="user-dob">
                             <h2>Check Here</h2>
                         </label>
-                        <input type="date" name="user-dob" id="user-dob" required class="right-comp">
+                        <input type="date" name="user-dob" id="user-dob" required class="right-comp" value="2021-12-02">
                         <button class="right-comp" type="submit">Submit</button>
                     </form>
                 </div>
             </main>
-        <div class="output common">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, voluptatibus? Debitis accusantium sunt dolore numquam fugit aperiam? Minima, deserunt repellat!</p>
+            <img src="loding.gif" alt="" class="loading-img">
+            <div class="output common">
         </div>
-
         <footer class="social common">
             <ul class="common">
                 <li class="social-li">

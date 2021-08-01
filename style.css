@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(235, 223, 223);
+    background-color: #ebdfdf;
 }
 
 .common {
@@ -35,7 +35,7 @@ nav {
 }
 
 a {
-    color: blue;
+    color: rgb(54, 54, 95);
     text-decoration: none;
     font-size: 1.2rem;
 }
@@ -109,7 +109,10 @@ main .right {
     margin-top: 1rem;
     width: inherit;
 }
-
+.loading-img{
+    display: none;
+    margin: auto;
+}
 .output {
     margin: 1rem 0;
     visibility: hidden;
