@@ -35,7 +35,7 @@ nav {
 }
 
 a {
-    color: rgb(54, 54, 95);
+    color: black;
     text-decoration: none;
     font-size: 1.2rem;
 }
@@ -98,12 +98,16 @@ main .right {
 }
 
 .right-form .right-comp {
+    outline: none;
     background-color: inherit;
-    border: 2px solid black;
+    border: 3px solid black;
     padding: .7rem 1rem;
 }
 
 .right-form button {
+    font-weight: 700;
+    background-color: black !important;
+    color: #ebdfdf;
     cursor: pointer;
     margin: auto;
     margin-top: 1rem;
@@ -114,14 +118,13 @@ main .right {
     margin: auto;
 }
 .output {
-    margin: 1rem 0;
-    visibility: hidden;
-}
-
-.output p {
+    text-align: center;
+    font-size: larger;
+    font-weight: 800;
+    margin: 2rem;
+    display: none;
+    border:  3px solid black;
     padding: 1.5rem;
-    border: 3px solid black;
-    width: 65vw;
 }
 
 footer {
@@ -156,6 +159,7 @@ footer p {
     }
 
     main .right {
+        margin-bottom: 2rem;
         width: 90vw;
     }
 
@@ -167,6 +171,6 @@ footer p {
         font-size: 1rem;
     }
     .output{
-        margin: 2rem 0;
+        margin: 2rem 1rem;
     }
 }

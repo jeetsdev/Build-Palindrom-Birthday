@@ -6,6 +6,7 @@ const imgLoading = document.querySelector(".loading-img");
 const dayesInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 inputForm.addEventListener('submit', () => {
+    outputSec.style.display = 'none';
     imgLoading.style.display = "block"; // Show the loading 
     let userDate = userDOB.value;
     birthDateArr = userDate.split('-');
@@ -14,18 +15,19 @@ inputForm.addEventListener('submit', () => {
     let birthDate = birthDateArr[2];
     setTimeout(() => {
         setDates(birthYear, birthMonth, birthDate);
-    }, 3000);
+    }, 4000);
 })
 
 function setDates(birthYear, birthMonth, birthDate) {
     let temp = checkDates(birthYear, birthMonth, birthDate);
     setTimeout(() => {
         if (temp) {
-            console.log("true here", temp);
-            showOutput(temp);
+            let outputText = `Yay !!! Your birthdate in ${temp} format is a Palindrome number.`;
+            showOutput(outputText);
         } else {
-            console.log("getting into next section");
-            getNextPalindrome(birthYear, birthMonth, birthDate);
+            let nextPalindromeNum = getNextPalindrome(birthYear, birthMonth, birthDate);
+            let outputText = `Oops !!! Your birthdate is not a Palindrome number. The nearest Palindrome number is ${nextPalindromeNum[0]}, Just ${nextPalindromeNum[1]} days ${nextPalindromeNum[2]} your birthDate.`;
+            showOutput(outputText);
         }
     }, 0)
 }
@@ -60,10 +62,10 @@ function isPalindrome(num) {
 
 }
 
-function showOutput(num) {
+function showOutput(text) {
     imgLoading.style.display = "none";
-    outputSec.style.visibility = "visible";
-    outputSec.textContent = num;
+    outputSec.style.display = "block";
+    outputSec.textContent = text;
 }
 
 function getNextPalindrome(y, m, d) {
@@ -90,7 +92,7 @@ function getNextPalindrome(y, m, d) {
         let monthForwardStr = monthForward.toString();
         let dayForwardStr = dayForward.toString();
         if (monthForwardStr.length === 1) {
-            monthForwardStr = "0" + monthForwardStr; 
+            monthForwardStr = "0" + monthForwardStr;
         }
         if (dayForwardStr.length === 1) {
             dayForwardStr = "0" + dayForwardStr;
@@ -115,7 +117,7 @@ function getNextPalindrome(y, m, d) {
                     break;
                 }
             }
-            dayBack = dayesInMonths[monthBack - 1];    // setting backDates
+            dayBack = dayesInMonths[monthBack - 1]; // setting backDates
         }
         let yearBackStr = yearBack.toString();
         let monthBackStr = monthBack.toString();
