@@ -2,37 +2,48 @@ const inputForm = document.forms[0];
 const userDOB = document.querySelector("#user-dob");
 const outputSec = document.querySelector(".output");
 const imgLoading = document.querySelector(".loading-img");
-console.log(inputForm);
+
+const dayesInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
 inputForm.addEventListener('submit', () => {
-    imgLoading.style.display = "block";
+    imgLoading.style.display = "block"; // Show the loading 
     let userDate = userDOB.value;
     birthDateArr = userDate.split('-');
     let birthYear = birthDateArr[0];
     let birthMonth = birthDateArr[1];
     let birthDate = birthDateArr[2];
-    let flage = checkDates(birthYear, birthMonth, birthDate);
-    setTimeout(()=>{if (flage) {
-        console.log("true here", flage);
-        showOutput(flage);
-    } else {
-        getNextPalindrome();
-    }},3000)
+    setTimeout(() => {
+        setDates(birthYear, birthMonth, birthDate);
+    }, 3000);
 })
-// 2011/12/10
-function checkDates(a, b, c) {
-    let firstFormat = a + b + c;
-    let secondFormat = c + b + a;
+
+function setDates(birthYear, birthMonth, birthDate) {
+    let temp = checkDates(birthYear, birthMonth, birthDate);
+    setTimeout(() => {
+        if (temp) {
+            console.log("true here", temp);
+            showOutput(temp);
+        } else {
+            console.log("getting into next section");
+            getNextPalindrome(birthYear, birthMonth, birthDate);
+        }
+    }, 0)
+}
+
+function checkDates(y, m, d) {
+    let firstFormat = y + m + d;
+    let secondFormat = d + m + y;
     // substr to removing part of string 
-    let thirdFormat = b + c + a.substr(2);
-    let fourthFormat = parseInt(b) + c + a;
+    let thirdFormat = m + d + y.substr(2);
+    let fourthFormat = parseInt(m) + d + y;
     if (isPalindrome(firstFormat)) {
-        return (`${a}-${b}-${c}`);
+        return (`${y}-${m}-${d}`);
     } else if (isPalindrome(secondFormat)) {
-        return (`${c}-${b}-${a}`);
+        return (`${d}-${m}-${y}`);
     } else if (isPalindrome(thirdFormat)) {
-        return (`${b}-${c}-${a.substring(2)}`);
+        return (`${m}-${d}-${y.substr(2)}`);
     } else if (isPalindrome(fourthFormat)) {
-        return (`${Number(b)}-${c}-${a}`);
+        return (`${parseInt(m)}-${d}-${y}`);
     } else {
         return false;
     }
@@ -55,6 +66,70 @@ function showOutput(num) {
     outputSec.textContent = num;
 }
 
-function getNextPalindrome(){
-   console.log();
+function getNextPalindrome(y, m, d) {
+    let yearForward = parseInt(y);
+    let monthForward = parseInt(m);
+    let dayForward = parseInt(d);
+    let yearBack = parseInt(y);
+    let monthBack = parseInt(m);
+    let dayBack = parseInt(d);
+    for (let index = 1; index > 0; index++) {
+
+        //! Forward checking...
+
+        dayForward = dayForward + 1;
+        if (dayForward > dayesInMonths[monthForward - 1]) {
+            dayForward = 1;
+            monthForward += 1;
+            if (monthForward > 12) {
+                yearForward += 1;
+                monthForward = 1;
+            }
+        }
+        let yearForwardStr = yearForward.toString();
+        let monthForwardStr = monthForward.toString();
+        let dayForwardStr = dayForward.toString();
+        if (monthForwardStr.length === 1) {
+            monthForwardStr = "0" + monthForwardStr; 
+        }
+        if (dayForwardStr.length === 1) {
+            dayForwardStr = "0" + dayForwardStr;
+        }
+        let nextDate = checkDates(yearForwardStr, monthForwardStr, dayForwardStr);
+        if (nextDate) {
+            console.log(`${nextDate},${index}`)
+            return [`${nextDate}`, index, "After"];
+        }
+
+        //! Backward checking...
+
+        dayBack -= 1;
+        console.log("In backward sec");
+        if (dayBack < 1) {
+            monthBack -= monthBack;
+            if (monthBack < 1) {
+                monthBack = 12;
+                yearBack -= 1;
+                if (yearBack < 1) {
+                    dd
+                    break;
+                }
+            }
+            dayBack = dayesInMonths[monthBack - 1];    // setting backDates
+        }
+        let yearBackStr = yearBack.toString();
+        let monthBackStr = monthBack.toString();
+        let dayBackStr = dayBack.toString();
+        if (monthBackStr.length === 1) {
+            monthBackStr = "0" + monthBackStr;
+        }
+        if (dayBackStr.length === 1) {
+            dayBackStr = "0" + dayBackStr;
+        }
+        let backDate = checkDates(yearBackStr, monthBackStr, dayBackStr);
+        if (backDate) {
+            console.log(`${backDate},${index}`)
+            return [`${backDate}`, index, "Before"];
+        }
+    }
 }
