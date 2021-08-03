@@ -131,7 +131,7 @@ function getNextPalindrome(y, m, d) {
         let backDate = checkDates(yearBackStr, monthBackStr, dayBackStr);
         if (backDate) {
             console.log(`${backDate},${index}`)
-            return [`${backDate}`, index, "Before"];
+            return [`${backDate}`, index, "Earlier"];
         }
     }
 }
