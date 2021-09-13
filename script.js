@@ -108,7 +108,7 @@ function getNextPalindrome(y, m, d) {
         dayBack -= 1;
         console.log("In backward sec");
         if (dayBack < 1) {
-            monthBack -= monthBack;
+            monthBack -= 1;
             if (monthBack < 1) {
                 monthBack = 12;
                 yearBack -= 1;
